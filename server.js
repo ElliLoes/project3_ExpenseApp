@@ -78,6 +78,29 @@ function createCategory() {
     });
 };
 
+function createExpense(user, category) {
+    console.log('test', user, category);
+
+    db.Expense
+        .find({ user: user._id })
+        .then(dbExpenses => {
+            if (!dbExpenses.length) {
+                console.log('create dummy expense');
+                db.Expense.create(
+                    {
+                        title: "Bread",
+                        amount: 16.23,
+                        user: user._id,
+                        category: category._id
+                    }
+                )
+                    .then(dbExpense => {
+                        console.log("success3", dbExpense);
+                    });
+            }
+        });
+}
+
 function createData() {
 
     // const user = createUser();
