@@ -1,0 +1,22 @@
+{
+  "name": "expenseapp",
+  "version": "0.1.0",
+  "description": "Expense like in the barefoot investor",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "if-env": "^1.0.4",
+    "nodemon": "^2.0.2"
+  }
+}
