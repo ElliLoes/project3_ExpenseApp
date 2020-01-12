@@ -39,7 +39,6 @@ function createUser() {
                         {
                             "username": "test1",
                             "password": "geheim"
-
                         }
                     )
                         .then((dbUser) => {

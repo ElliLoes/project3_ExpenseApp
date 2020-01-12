@@ -4,13 +4,13 @@ const expenseController = require("../../controllers/expenseController");
 // Matches with "/api/books"
 router.route("/")
   .get(expenseController.findAll)
-//   .post(expenseController.create);
+  .post(expenseController.create);
 
-// // Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(expenseController.findById)
-//   .put(expenseController.update)
+// Matches with "/api/books/:id"
+router
+  .route("/:id")
+  .get(expenseController.findById)
+  .put(expenseController.update)
 //   .delete(expenseController.remove);
 
 module.exports = router;
