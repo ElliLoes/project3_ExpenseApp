@@ -17,24 +17,24 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(503).json(err));
   },
-  findById: function(req, res) {
+  findById: function (req, res) {
     db.Expense
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(503).json(err));
   },
-  create: function(req, res) {
+  create: function (req, res) {
     console.log('create expense', req.body);
     db.Expense
       .create(req.body)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(503).json(err));
   },
-  update: function(req, res) {
+  update: function (req, res) {
     db.Expense
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(503).json(err));
   },
 
 }
