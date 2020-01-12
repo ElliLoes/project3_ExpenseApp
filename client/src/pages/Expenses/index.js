@@ -48,7 +48,8 @@ class Expenses extends Component {
                         amount={expense.amount}
                         description={expense.description}
                         date={expense.date}
-                        image={book.image}
+                        category={expense.category}
+                        user={expense.user}
                       />
                       <ModifyBtn
                         onClick={() => this.deleteExpense(expense._id)}
