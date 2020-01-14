@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
+import ModifyBtn from "../../components/ModifyBtn";
 // import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Col, Row } from "../../components/Grid";
-import { BookList, BookListItem } from "../../components/List";
-import NoBooks from '../../components/NoBooks';
+import NoExpenses from "../../components/NoExpenses";
+import { ExpenseList, ExpenseListItem } from "../../components/List";
+
 
 class Expenses extends Component {
   state = {
@@ -26,8 +27,8 @@ class Expenses extends Component {
   };
 
   deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+    API.deleteExpense(id)
+      .then(res => this.loadExpense())
       .catch(err => console.log(err));
   };
 
