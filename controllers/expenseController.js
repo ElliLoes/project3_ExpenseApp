@@ -2,14 +2,14 @@ const db = require("../models");
 
 module.exports = {
   findAll: function (req, res) {
-    if (!req.query.user) {
-      res.status(400).json({ error: "Bad Request", msg: 'No "user" specified' });
-      return;
-    }
-    if (!req.query.user.match(/^[0-9a-fA-F]{24}$/)) {
-      res.status(400).json({ error: "Bad Request", msg: 'Invalid user id' });
-      return;
-    }
+    // if (!req.query.user) {
+    //   res.status(400).json({ error: "Bad Request", msg: 'No "user" specified' });
+    //   return;
+    // }
+    // if (!req.query.user.match(/^[0-9a-fA-F]{24}$/)) {
+    //   res.status(400).json({ error: "Bad Request", msg: 'Invalid user id' });
+    //   return;
+    // }
 
     db.Expense
       .find(req.query)

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ModifyBtn from "../../components/ModifyBtn";
+import DeleteBtn from "../../components/DeleteBtn";
 // import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -24,9 +24,10 @@ class Expenses extends Component {
         this.setState({ savedExpenses: res.data })
       )
       .catch(err => console.log(err));
+      console.log(this.state.savedExpenses, "the state");
   };
 
-  deleteBook = id => {
+  deleteExpense = id => {
     API.deleteExpense(id)
       .then(res => this.loadExpense())
       .catch(err => console.log(err));
@@ -52,7 +53,7 @@ class Expenses extends Component {
                         category={expense.category}
                         user={expense.user}
                       />
-                      <ModifyBtn
+                      <DeleteBtn
                         onClick={() => this.deleteExpense(expense._id)}
                       />
                     </div>

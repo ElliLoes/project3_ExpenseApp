@@ -190,7 +190,7 @@ CREATE TABLE spending_goal
 #### Expenses
 | verb | path | description |
 |---|---|---|
-| `GET` | `/api/expense` | list all expenses and returns a `ExpenseList` |
+| `GET` | `/api/expense?user=:userId` | list all expenses and returns a `ExpenseList` |
 | `GET` | `/api/expense/:id` | specific expense, returns an `Expense` |
 | `POST` | `/api/expense` | add an expense, takes a `CreateExpenseRequest` returns the newly created expense `Expense` |
 | `PUT` | `/api/expense/:id` | edit an expense, takes an `Expense` and returns the updated `Expense` |
