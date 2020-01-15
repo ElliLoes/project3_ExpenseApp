@@ -1,81 +1,43 @@
-import React, { Component } from 'react';
-import Title from "../../components/Title";
-import Jumbotron from "../../components/Jumbotron";
+import React, { useState } from "react";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./style.css";
 
+export default function Login(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-class LoginPage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      username: '',
-      password: '',
-      error: '',
-    };
-
-    this.handlePassChange = this.handlePassChange.bind(this);
-    this.handleUserChange = this.handleUserChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.dismissError = this.dismissError.bind(this);
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
   }
 
-  dismissError() {
-    this.setState({ error: '' });
+  function handleSubmit(event) {
+    event.preventDefault();
   }
 
-  handleSubmit(evt) {
-    evt.preventDefault();
-
-    if (!this.state.username) {
-      return this.setState({ error: 'Username is required' });
-    }
-
-    if (!this.state.password) {
-      return this.setState({ error: 'Password is required' });
-    }
-
-    return this.setState({ error: '' });
-  }
-
-  handleUserChange(evt) {
-    this.setState({
-      username: evt.target.value,
-    });
-  };
-
-  handlePassChange(evt) {
-    this.setState({
-      password: evt.target.value,
-    });
-  }
-
-  render() {
-
-    return (
-      <div>
-        <Jumbotron>
-          <Title>ExpenseApp</Title>
-          </Jumbotron>
-        <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          {
-            this.state.error &&
-            <h3 data-test="error" onClick={this.dismissError}>
-              <button onClick={this.dismissError}>✖</button>
-              {this.state.error}
-            </h3>
-          }
-          <label>User Name</label>
-          <input type="text" data-test="username" value={this.state.username} onChange={this.handleUserChange} />
-
-          <label>Password</label>
-          <input type="password" data-test="password" value={this.state.password} onChange={this.handlePassChange} />
-
-          <input type="submit" value="Log In" data-test="submit" />
-        </form>
-        </div>
-      </div>
-    );
-  }
+  return (
+    <div className="Login">
+      <form onSubmit={handleSubmit}>
+        <FormGroup controlId="email" bsSize="medium">
+          <ControlLabel>Email</ControlLabel>
+          <FormControl
+            autoFocus
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+        </FormGroup>
+        <FormGroup controlId="password" bsSize="medium">
+          <ControlLabel>Password</ControlLabel>
+          <FormControl
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            type="password"
+          />
+        </FormGroup>
+        <Button block bsSize="medium" disabled={!validateForm()} type="submit">
+          Login
+        </Button>
+      </form>
+    </div>
+  );
 }
-
-export default LoginPage;

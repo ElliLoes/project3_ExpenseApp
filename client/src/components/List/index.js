@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "../Image";
 import { Container, Row, Col } from "../Grid";
+import "./style.css";
 
 
 export function ExpenseList({ children }) {

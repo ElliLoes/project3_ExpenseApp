@@ -1,0 +1,34 @@
+.jumbotron {
+/* position: absolute;
+width: 423px;
+height: 278px;
+left: -12px;
+top: -24px; */
+
+background-size: cover;
+height: 200px;
+width: 100%;
+
+background: #17E9E0;
+/* border-radius: 30px; */
+}
+
+#jumboHead {
+
+/* position: absolute; */
+/* width: 116px;
+height: 27px;
+left: 137px;
+top: 148px; */
+
+/* font-family: Cal; */
+font-style: normal;
+font-weight: normal;
+font-size: 35px;
+line-height: 27px;
+
+
+color: #19181A;
+
+    
+}
