@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "../../components/Grid";
 import NoExpenses from "../../components/NoExpenses";
 import { ExpenseList, ExpenseListItem } from "../../components/List";
+import Button from "../../components/Button";
 
 
 class Expenses extends Component {
@@ -55,6 +56,9 @@ class Expenses extends Component {
                       />
                       <DeleteBtn
                         onClick={() => this.deleteExpense(expense._id)}
+                      />
+                      <Button
+                      onClick={() => this.getExpense(expense._id)}
                       />
                     </div>
                   )

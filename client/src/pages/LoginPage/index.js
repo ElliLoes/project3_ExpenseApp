@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-// import './App.css';
+import Title from "../../components/Title";
+import Jumbotron from "../../components/Jumbotron";
+
 
 class LoginPage extends Component {
   constructor() {
@@ -49,7 +51,11 @@ class LoginPage extends Component {
   render() {
 
     return (
-      <div className="Login">
+      <div>
+        <Jumbotron>
+          <Title>ExpenseApp</Title>
+          </Jumbotron>
+        <div className="Login">
         <form onSubmit={this.handleSubmit}>
           {
             this.state.error &&
@@ -66,6 +72,7 @@ class LoginPage extends Component {
 
           <input type="submit" value="Log In" data-test="submit" />
         </form>
+        </div>
       </div>
     );
   }
