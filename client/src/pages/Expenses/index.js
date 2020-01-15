@@ -32,13 +32,13 @@ class Expenses extends Component {
 
   getExpense = (id) => {
     API.getExpense(id)
-    .then(res => this.loadExpense())
+    .then(res => this.loadExpenses())
     .catch(err => console.log(err));
   }
 
   deleteExpense = id => {
     API.deleteExpense(id)
-      .then(res => this.loadExpense())
+      .then(res => this.loadExpenses())
       .catch(err => console.log(err));
   };
 
@@ -54,9 +54,8 @@ class Expenses extends Component {
                 {this.state.savedExpenses.map(expense => {
                   console.log(expense)
                   return (
-                    <div>
+                    <div key={expense._id}>
                       <ExpenseListItem
-                        key={expense._id}
                         title={expense.title}
                         amount={expense.amount}
                         description={expense.description}
