@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "../../components/Grid";
 import NoExpenses from "../../components/NoExpenses";
 import { ExpenseList, ExpenseListItem } from "../../components/List";
-import Button from "../../components/Button";
+import ModifyBtn from "../../components/ModifyBtn";
+import AddExpense from "../../components/AddExpense";
+
 
 
 class Expenses extends Component {
@@ -28,6 +30,12 @@ class Expenses extends Component {
       console.log(this.state.savedExpenses, "the state");
   };
 
+  getExpense = (id) => {
+    API.getExpense(id)
+    .then(res => this.loadExpense())
+    .catch(err => console.log(err));
+  }
+
   deleteExpense = id => {
     API.deleteExpense(id)
       .then(res => this.loadExpense())
@@ -38,6 +46,8 @@ class Expenses extends Component {
     return (
       <div>
         <Row>
+          <AddExpense 
+          />
           <Col size="md-12">
             {this.state.savedExpenses.length > 0 ?
               <ExpenseList>
@@ -57,7 +67,7 @@ class Expenses extends Component {
                       <DeleteBtn
                         onClick={() => this.deleteExpense(expense._id)}
                       />
-                      <Button
+                      <ModifyBtn
                       onClick={() => this.getExpense(expense._id)}
                       />
                     </div>

@@ -26,7 +26,7 @@ class AddExpense extends React.Component {
       <div>
         <Button type="primary" onClick={() => { this.postToDB(this.props) }
         }>
-          Save Expense
+          Add Expense
         </Button>
       </div>
     );
