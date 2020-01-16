@@ -1,5 +1,5 @@
 import React from "react";
-// import "./style.css";
+import "./style.css";
 import Button from "../Button";
 
 // The ...props means, spread all of the passed props onto this element

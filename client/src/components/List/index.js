@@ -22,7 +22,8 @@ export class ExpenseListItem extends React.Component {
               <Image src={this.props.image} />
             </Col> */}
             <Col size="xs-8 sm-9">
-              <h3>{this.props.title}<span><h5>{this.props.amount}</h5></span></h3>
+              <h3>{this.props.title}<span></span></h3>
+              <h2>$ {this.props.amount}</h2>
               <p>
                 {this.props.description}
                 {this.props.date}

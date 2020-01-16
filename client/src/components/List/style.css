@@ -6,8 +6,6 @@
     overflow-x: hidden;
   }
 
-
-
   .list-group {
     margin-left: 30px;
     background-color: rgb(34, 37, 37);
@@ -21,8 +19,8 @@
     cursor: pointer;
   }
   
-  /* .list-overflow-container ul {
-    margin: 0;
+  /* h2 {
+    float: right;
   } */
   
   .list-overflow-container li {
