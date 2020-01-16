@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 // import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row } from "../../components/Grid";
 import NoExpenses from "../../components/NoExpenses";
 import { ExpenseList, ExpenseListItem } from "../../components/List";
 import ModifyBtn from "../../components/ModifyBtn";
-import Button from "../../components/Button";
-import AddExpense from "../../components/AddExpense";
+import AddBtn from "../../components/AddBtn";
+// import AddExpense from "../../components/AddExpense";
 // import AddExpense from "../../pages/AddExpense";
 
 
@@ -25,17 +25,17 @@ class Expenses extends Component {
 
   loadExpenses = () => {
     API.getExpenses()
-      .then(res => 
+      .then(res =>
         this.setState({ savedExpenses: res.data })
       )
       .catch(err => console.log(err));
-      console.log(this.state.savedExpenses, "the state");
+    console.log(this.state.savedExpenses, "the state");
   };
 
   getExpense = (id) => {
     API.getExpense(id)
-    .then(res => this.loadExpenses())
-    .catch(err => console.log(err));
+      .then(res => this.loadExpenses())
+      .catch(err => console.log(err));
   }
 
   deleteExpense = id => {
@@ -48,9 +48,9 @@ class Expenses extends Component {
     return (
       <div>
         <Row>
-          <Button  onClick={() => window.location.href = "/expenses/add"} role="button" tabIndex="0">
-          Add Expense
-        </Button>
+          <AddBtn onClick={() => window.location.href = "/expenses/add"}
+            Add Expense
+        />
           <Col size="md-12">
             {this.state.savedExpenses.length > 0 ?
               <ExpenseList>
@@ -70,7 +70,7 @@ class Expenses extends Component {
                         onClick={() => this.deleteExpense(expense._id)}
                       />
                       <ModifyBtn
-                      onClick={() => this.getExpense(expense._id)}
+                        onClick={() => this.getExpense(expense._id)}
                       />
                     </div>
                   )
