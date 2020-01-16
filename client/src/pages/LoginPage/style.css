@@ -5,12 +5,17 @@
     max-width: 320px;
   }
 
+  button {
+    background-color: #A64Ac9!important;
+    margin-top: 20px;
+    /* margin-bottom: 40px; */
+  }
+
 
 
 @media all and (min-width: 480px) {
     .Login {
       padding: 60px 0;
-      background-color: #FCCD04;
     }
   
     .Login form {
