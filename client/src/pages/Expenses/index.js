@@ -7,7 +7,9 @@ import { Col, Row } from "../../components/Grid";
 import NoExpenses from "../../components/NoExpenses";
 import { ExpenseList, ExpenseListItem } from "../../components/List";
 import ModifyBtn from "../../components/ModifyBtn";
+import Button from "../../components/Button";
 import AddExpense from "../../components/AddExpense";
+// import AddExpense from "../../pages/AddExpense";
 
 
 
@@ -46,8 +48,9 @@ class Expenses extends Component {
     return (
       <div>
         <Row>
-          <AddExpense onClick={event =>  window.location.href='/add'}
-          />
+          <Button  onClick={() => window.location.href = "/expenses/add"} role="button" tabIndex="0">
+          Add Expense
+        </Button>
           <Col size="md-12">
             {this.state.savedExpenses.length > 0 ?
               <ExpenseList>
