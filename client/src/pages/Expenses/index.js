@@ -46,7 +46,7 @@ class Expenses extends Component {
     return (
       <div>
         <Row>
-          <AddExpense 
+          <AddExpense onClick={event =>  window.location.href='/add'}
           />
           <Col size="md-12">
             {this.state.savedExpenses.length > 0 ?
