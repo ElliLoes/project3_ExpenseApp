@@ -1,6 +1,7 @@
 //client/components/Add.js
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import "./style.css";
 
 class AddExpense extends React.Component {
     constructor(props) {
@@ -39,11 +40,11 @@ class AddExpense extends React.Component {
         return (
             <div>
                 <fieldset>
-                    <label htmlFor="title">Title</label><input type="text" id="title" name="title" value={this.state.title} onChange={this.handleTextChange}></input>
-                    <label htmlFor="amount">Amount:</label><input type="number" id="amount" name="amount" value={this.state.amount} onChange={this.handleTextChange}></input>
-                    <label htmlFor="description">Description:</label><input type="text" id="description" name="description" value={this.state.description} onChange={this.handleTextChange}></input>
-                    <label htmlFor="date">Date:</label><input type="date" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input>
-                    <label htmlFor="category">Category:</label><input type="text" id="category" name="category" value={this.state.category} onChange={this.handleTextChange}></input>
+                <li class="form-row"><label htmlFor="title">Title</label><input type="text" id="title" name="title" value={this.state.title} onChange={this.handleTextChange}></input></li>
+                <li class="form-row"><label htmlFor="amount">Amount:</label><input type="number" id="amount" name="amount" value={this.state.amount} onChange={this.handleTextChange}></input></li>
+                <li class="form-row"><label htmlFor="description">Description:</label><input type="text" id="description" name="description" value={this.state.description} onChange={this.handleTextChange}></input></li>
+                <li class="form-row"><label htmlFor="date">Date:</label><input type="date" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input></li>
+                <li class="form-row"><label htmlFor="category">Category:</label><input type="text" id="category" name="category" value={this.state.category} onChange={this.handleTextChange}></input></li>
                 </fieldset>
                 <div className='button-center'>
                     <br />
@@ -53,4 +54,5 @@ class AddExpense extends React.Component {
         );
     }
 }
+
 export default AddExpense;
