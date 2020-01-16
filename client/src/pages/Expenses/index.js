@@ -62,7 +62,7 @@ class Expenses extends Component {
                         title={expense.title}
                         amount={expense.amount}
                         description={expense.description}
-                        date={expense.date}
+                        date={new Date(expense.date).toLocaleDateString()}
                         category={expense.category}
                         user={expense.user}
                       />
