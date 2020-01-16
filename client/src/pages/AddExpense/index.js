@@ -3,8 +3,9 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 class AddExpense extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        console.log(this);
         this.state = {
             title: '',
             amount: '',
@@ -17,16 +18,15 @@ class AddExpense extends React.Component {
         // this.onClick = this.onClick.bind(this);
         // this.handleTextChange = this.handleTextChange.bind(this);
         // this.insertNewExpense = this.insertNewExpense.bind(this);
-        // this.openModal = this.openModal.bind(this);
-        // this.closeModal = this.closeModal.bind(this);
     }
-    onClick(e) {
+    onClick = (e) => {
         this.insertNewExpense(this);
     }
-    handleTextChange(e) {
+    handleTextChange = (e) => {
+        console.log(e.target.name, e.target.value, "textchange");
         if (e.target.name === "title") {
             this.setState({
-                description: e.target.value
+                title: e.target.value
             });
         }
         if (e.target.name === "amount") {
@@ -41,9 +41,9 @@ class AddExpense extends React.Component {
                 <fieldset>
                     <label htmlFor="title">Title</label><input type="text" id="title" name="title" value={this.state.title} onChange={this.handleTextChange}></input>
                     <label htmlFor="amount">Amount:</label><input type="number" id="amount" name="amount" value={this.state.amount} onChange={this.handleTextChange}></input>
-                    <label htmlFor="amount">Description:</label><input type="text" id="description" name="description" value={this.state.description} onChange={this.handleTextChange}></input>
-                    <label htmlFor="amount">Date:</label><input type="date" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input>
-                    <label htmlFor="amount">Category:</label><input type="text" id="category" name="category" value={this.state.category} onChange={this.handleTextChange}></input>
+                    <label htmlFor="description">Description:</label><input type="text" id="description" name="description" value={this.state.description} onChange={this.handleTextChange}></input>
+                    <label htmlFor="date">Date:</label><input type="date" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input>
+                    <label htmlFor="category">Category:</label><input type="text" id="category" name="category" value={this.state.category} onChange={this.handleTextChange}></input>
                 </fieldset>
                 <div className='button-center'>
                     <br />
