@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Glyphicon } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Button from 'react-bootstrap/Button';
 import "./style.css";
 
 function LoaderBtn({
@@ -14,7 +15,7 @@ function LoaderBtn({
       disabled={disabled || isLoading}
       {...props}
     >
-      {isLoading && <Glyphicon glyph="refresh" className="spinning" />}
+      {isLoading && <FontAwesomeIcon icon="spinner" spin />}
       {props.children}
     </Button>
   );
