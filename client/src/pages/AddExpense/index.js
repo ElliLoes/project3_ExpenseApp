@@ -1,28 +1,36 @@
 //client/components/Add.js
 import React from 'react';
+import { useState } from "react";
 import { Button } from 'react-bootstrap';
 import "./style.css";
+import API from "../../utils/API";
 
 class AddExpense extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this);
         this.state = {
             title: '',
             amount: '',
             description: '',
             date: '',
-            category: '',
-            user: '',
+            category: ''
         }
-        // this.handleSelectChange = this.handleSelectChange.bind(this);
-        // this.onClick = this.onClick.bind(this);
-        // this.handleTextChange = this.handleTextChange.bind(this);
-        // this.insertNewExpense = this.insertNewExpense.bind(this);
+        console.log(this);
     }
-    onClick = (e) => {
-        this.insertNewExpense(this);
+    addExpense = (e) => {
+        API.saveExpense({ 
+            title: this.state.title, 
+            amount: this.state.amount,
+            description: this.state.description,
+            date: this.state.date,
+            category: this.state.category
+        })
+            .then(res => this.props.history.push("/expenses"))
+            .catch(err => console.log(err))
+
+        // this.insertNewExpense(this);
     }
+
     handleTextChange = (e) => {
         console.log(e.target.name, e.target.value, "textchange");
         if (e.target.name === "title") {
@@ -35,6 +43,22 @@ class AddExpense extends React.Component {
                 amount: e.target.value
             });
         }
+        if (e.target.name === "description") {
+            this.setState({
+                description: e.target.description
+            });
+        }
+        if (e.target.name === "date") {
+            this.setState({
+                date: e.target.date
+            });
+        }
+        if (e.target.name === "category") {
+            this.setState({
+                category: e.target.category
+            });
+        }
+
     }
     render() {
         return (
@@ -48,7 +72,7 @@ class AddExpense extends React.Component {
                 </fieldset>
                 <div className='button-center'>
                     <br />
-                    <Button bsStyle="success" bsSize="small" onClick={this.onClick}>Add Expense</Button>
+                    <Button bsStyle="success" bsSize="small" onClick={this.addExpense}>Add Expense</Button>
                 </div>
             </div>
         );
