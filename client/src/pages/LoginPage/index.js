@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./style.css";
+import API from "../../utils/API";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
@@ -12,6 +13,9 @@ export default function Login(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+      API.loginUser({email: email, password: password})
+        .then(res => console.log("login success", res))
+        .catch(err => console.log(err));
   }
 
   return (
