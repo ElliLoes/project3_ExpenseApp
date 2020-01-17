@@ -11,8 +11,10 @@ module.exports = {
     //   return;
     // }
 
+    console.log("user", req.user);
+
     db.Expense
-      .find(req.query)
+      .find({ user: req.user })
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(503).json(err));
@@ -36,7 +38,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(503).json(err));
   },
-  remove: function(req, res) {
+  remove: function (req, res) {
     db.Expense
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3001'
+const base = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000'
 
 export default {
   // Gets all expenses

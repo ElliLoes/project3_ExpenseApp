@@ -15,6 +15,7 @@ export default function Login(props) {
   }
 
   function handleSubmit(event) {
+    setEmailValid(true);
     event.preventDefault();
       API.loginUser({email: email, password: password})
         .then(res => console.log("login success", res))

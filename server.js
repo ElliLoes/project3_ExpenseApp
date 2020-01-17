@@ -5,6 +5,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require("./models");
+const cookieParser = require('cookie-parser')
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -14,8 +15,10 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 app.use(cors());
+app.use(cookieParser());
 // Add routes, both API and view
 app.use(routes);
+
 
 // Connect to the Mongo DB
 mongoose.connect(
@@ -29,8 +32,6 @@ app.listen(PORT, function () {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
 
-console.log('Hello, World!');
-
 function createUser() {
     return new Promise((resolve, reject) => {
         db.User
@@ -41,7 +42,7 @@ function createUser() {
                     console.log('create dummy user');
                     db.User.create(
                         {
-                            "username": "test1",
+                            "email": "test@gmail.com",
                             "password": "geheim"
                         }
                     )
