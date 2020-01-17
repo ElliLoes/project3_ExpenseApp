@@ -8,6 +8,7 @@ import API from "../../utils/API";
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailValid, setEmailValid] = useState(true);
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -19,13 +20,13 @@ export default function Login(props) {
         .then(res => console.log("login success", res))
         .catch(err => {
           console.log(err);
-
+          setEmailValid(false)
         });
   }
 
   return (
     <div className="Login">
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email" bsSize="large" placeholder="e-mail">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -33,9 +34,10 @@ export default function Login(props) {
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
+            isInvalid={!emailValid}
           />
           <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
+            Email doesn't exist.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="password" bsSize="large" placeholder="password">
@@ -54,7 +56,7 @@ export default function Login(props) {
         <Button block bsSize="large" disabled={!validateForm()} type="submit">
           Register
         </Button>
-      </form>
+      </Form>
     </div>
   );
 }
