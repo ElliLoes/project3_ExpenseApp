@@ -11,11 +11,13 @@ class Home extends React.Component {
             <div className="mbsc-padding">
                 <h3>Add Expense</h3>
                 <Card theme="ios"  themeVariant="light" >
-                    <img src="https://img.mobiscroll.com/demos/bookpic.png" />
+                    <h1>This is a navigation option</h1>
                 </Card>
             </div>
         );
     }    
 }
+
+console.log("homescreen");
 
 export default Home;

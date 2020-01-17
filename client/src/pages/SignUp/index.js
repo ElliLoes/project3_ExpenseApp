@@ -12,8 +12,7 @@ export default function Signup(props) {
     const [fields, handleFieldChange] = useFormFields({
         email: "",
         password: "",
-        confirmPassword: "",
-        confirmationCode: ""
+        confirmPassword: ""
     });
     const [newUser, setNewUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +39,7 @@ export default function Signup(props) {
         ];
     }
 
-    async function handleSubmit(event) {
+    function handleSubmit(event) {
         event.preventDefault();
 
         setIsLoading(true);
@@ -86,14 +85,14 @@ export default function Signup(props) {
                     disabled={!validateForm()}
                 >
                     Signup
-        </LoaderBtn>
+                </LoaderBtn>
             </form>
         );
     }
 
     return (
         <div className="Signup">
-            {newUser === renderForm()}
+            {renderForm()}
         </div>
     );
 }

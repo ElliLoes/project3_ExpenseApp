@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import Expenses from "./pages/Expenses";
-// import Home from "./pages/Home";
+import Home from "./pages/Home";
 import AddExpense from "./pages/AddExpense";
 import SignUp from "./pages/SignUp";
 import Nav from "./components/Nav";
@@ -16,7 +16,7 @@ function App() {
         <Container>
           <Nav />
           <Switch>
-            {/* <Route exact path="/home" component={Home} /> */}
+            <Route exact path="/home" component={Home} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/expenses/add" component={AddExpense} />
