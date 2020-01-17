@@ -19,9 +19,9 @@
     cursor: pointer;
   }
   
-  /* h2 {
-    float: right;
-  } */
+  h2 {
+    font-weight: bold;
+  }
   
   .list-overflow-container li {
     border-radius: 0px;

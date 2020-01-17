@@ -1,6 +1,6 @@
 .primary-btn {
     background-color: #fccd04!important;
-    border-color: #fccd04;
-    color: black;
+    border-color: #fccd04!important;
+    color: black!important;
     margin-bottom: 20px;
 }

@@ -1,4 +1,5 @@
 .secondary-btn {
     background-color: #ffb48f!important;
-    border-color: #ffb48f;
+    border-color: #ffb48f!important;
+    color: black!important;
 }
