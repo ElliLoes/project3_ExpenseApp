@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import Expenses from "./pages/Expenses";
 // import Home from "./pages/Home";
 import AddExpense from "./pages/AddExpense";
+import SignUp from "./pages/SignUp";
 import Nav from "./components/Nav";
 import { Container } from "./components/Grid";
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
           <Switch>
             {/* <Route exact path="/home" component={Home} /> */}
             <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/signup" component={SignUp} />
             <Route exact path="/expenses/add" component={AddExpense} />
             <Route exact path="/expenses" component={Expenses} />
             <Route exact path="/expenses/:id" component={null} />
