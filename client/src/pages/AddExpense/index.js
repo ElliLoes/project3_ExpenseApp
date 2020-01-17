@@ -48,7 +48,7 @@ class AddExpense extends React.Component {
                 </fieldset>
                 <div className='button-center'>
                     <br />
-                    <Button bsStyle="success" bsSize="small" onClick={this.onClick}>Add New Expense</Button>
+                    <Button bsStyle="success" bsSize="small" onClick={this.onClick}>Add Expense</Button>
                 </div>
             </div>
         );

@@ -1,6 +1,6 @@
-
 fieldset {
     background-color: rgb(34, 37, 37);
+    font-size: 15px;
     list-style-type: none;
     padding: 0;
     border-radius: 3px;
@@ -8,42 +8,49 @@ fieldset {
     margin-left: 15px;
     padding-right: 5px;
     padding-left: 5px;
+    margin-top: 20px;
     cursor: pointer;
-  }
+}
 
-  .form-row {
+.form-row {
     display: flex;
     justify-content: flex-end;
     padding: .5em;
-  }
-  .form-row > label {
+}
+
+.form-row>label {
     padding: .5em 1em .5em 0;
     flex: 1;
-  }
-  .form-row > input {
+}
+
+.form-row>input {
     flex: 2;
-  }
-  .form-row > input,
-  .form-row > button {
+}
+
+.form-row>input, .form-row>button {
     padding: .5em;
-  }
-  .form-row > button {
-   background: gray;
-   color: white;
-   border: 0;
-  }
+}
 
-  button {
-      margin-right: 15px;
-  }
+.form-row>button {
+    background: gray;
+    color: white;
+    border: 0;
+}
 
-input, select, textarea{
+.btn-group-sm>.btn, .btn-sm {
+    margin-left: 20px;
+    height: 50px;
+    background-color: #fccd04!important;
+    border-color: #fccd04;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+input, select, textarea {
     color: black;
 }
 
 textarea:focus, input:focus {
-    color:black;
+    color: black;
 }
-
-
-    
