@@ -22,5 +22,9 @@ export default {
 
   loginUser: function(loginData) {
     return axios.post(base + "/api/login", loginData);
+  },
+
+  signupUser: function(signupData) {
+    return axios.post(base + "/api/signup", signupData);
   }
 };

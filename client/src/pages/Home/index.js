@@ -3,8 +3,6 @@ import React from 'react';
 // import { Card, CardFooter } from "react-bootstrap";
 import Card from "../../components/Card";
 
-
-
 class Home extends React.Component {
     render() {
         return (

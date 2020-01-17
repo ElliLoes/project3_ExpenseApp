@@ -3,6 +3,9 @@ import Form from 'react-bootstrap/Form';
 import { useState } from "react";
 import LoaderBtn from "../../components/LoaderBtn";
 import "./style.css";
+import useFormFields from '../../utils/useFormFields';
+import API from "../../utils/API";
+
 
 export default function Signup(props) {
     const [fields, handleFieldChange] = useFormFields({
@@ -10,8 +13,8 @@ export default function Signup(props) {
         password: "",
         confirmPassword: ""
     });
-    const [newUser, setNewUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [emailValid, setEmailValid] = useState(true);
 
     function validateForm() {
         return (
@@ -21,28 +24,17 @@ export default function Signup(props) {
         );
     }
 
-    function useFormFields(initialState) {
-        const [fields, setValues] = useState(initialState);
-
-        return [
-            fields,
-            function (event) {
-                setValues({
-                    ...fields,
-                    [event.target.id]: event.target.value
-                });
-            }
-        ];
-    }
-
     function handleSubmit(event) {
-        event.preventDefault();
-
         setIsLoading(true);
+        setEmailValid(true);
+        event.preventDefault();
+        API.signupUser({ email: fields.email, password: fields.password })
+            .then(res => props.history.push("/home"))
+            .catch(err => {
+                setIsLoading(false);
+                setEmailValid(false);
+            });
 
-        setNewUser("test");
-
-        setIsLoading(false);
     }
 
     function renderForm() {
@@ -55,7 +47,11 @@ export default function Signup(props) {
                         type="email"
                         value={fields.email}
                         onChange={handleFieldChange}
+                        isInvalid={!emailValid}
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Email already exists. Do you want to login instead?
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group controlId="password" bsSize="large">
                     <Form.Label>Password</Form.Label>

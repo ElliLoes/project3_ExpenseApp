@@ -17,12 +17,12 @@ export default function Login(props) {
   function handleSubmit(event) {
     setEmailValid(true);
     event.preventDefault();
-      API.loginUser({email: email, password: password})
-        .then(res => console.log("login success", res))
-        .catch(err => {
-          console.log(err);
-          setEmailValid(false)
-        });
+    API.loginUser({ email: email, password: password })
+      .then(res => props.history.push("/home"))
+      .catch(err => {
+        console.log(err);
+        setEmailValid(false)
+      });
   }
 
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import Button from 'react-bootstrap/Button';
 import "./style.css";
 
@@ -15,7 +16,7 @@ function LoaderBtn({
       disabled={disabled || isLoading}
       {...props}
     >
-      {isLoading && <FontAwesomeIcon icon="spinner" spin />}
+      {isLoading && <FontAwesomeIcon icon={faSpinner} spin />}
       {props.children}
     </Button>
   );

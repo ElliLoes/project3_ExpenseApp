@@ -32,11 +32,26 @@ module.exports = {
 
 
             })
+    },
 
+    signup: function (req, res) {
+        console.log("signup", req.body);
+        db.User
+            .create({
+                email: req.body.email,
+                password: req.body.password
+            })
+            .then(dbUser => {
+                const token = jwt.sign({ user: dbUser._id }, "secret", {
+                    expiresIn: 10000000
+                });
+                res.cookie("token", token);
+                res.status(200).json();
 
-        //   db.User
-        //     .create(req.body)
-        //     .then(dbModel => res.json(dbModel))
-        //     .catch(err => res.status(503).json(err));
+            })
+            .catch(err => {
+                console.log(err)
+                res.status(409).json();
+            });
     }
 }
