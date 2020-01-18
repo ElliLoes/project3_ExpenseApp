@@ -4,7 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import Expenses from "./pages/Expenses";
 import Categories from "./pages/Categories";
 import Home from "./pages/Home";
-import AddExpense from "./pages/AddExpense";
+import Expense from "./pages/Expense";
 import SignUp from "./pages/SignUp";
 // import Nav from "./components/Nav";
 import { Container } from "./components/Grid";
@@ -20,9 +20,9 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/expenses/add" component={AddExpense} />
+            <Route exact path="/expenses/add" component={Expense} />
             <Route exact path="/expenses" component={Expenses} />
-            <Route exact path="/expenses/:id" component={null} />
+            <Route exact path="/expenses/:id" component={Expense} />
             <Route exact path="/categories" component={Categories} />
           </Switch>
         </Container>

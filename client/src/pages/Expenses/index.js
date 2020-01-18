@@ -35,12 +35,6 @@ class Expenses extends Component {
     console.log(this.state.savedExpenses, "the state");
   };
 
-  getExpense = (id) => {
-    API.getExpense(id)
-      .then(res => this.loadExpenses())
-      .catch(err => console.log(err));
-  }
-
   deleteExpense = id => {
     API.deleteExpense(id)
       .then(res => this.loadExpenses())
@@ -52,7 +46,7 @@ class Expenses extends Component {
       <div>
         <Nav />
         <Row>
-          <AddBtn onClick={() => window.location.href = "/expenses/add"}
+          <AddBtn onClick={() => this.props.history.push("/expenses/add")}
             Add Expense
         />
           <Col size="md-12">
@@ -73,7 +67,7 @@ class Expenses extends Component {
                         onClick={() => this.deleteExpense(expense._id)}
                       />
                       <ModifyBtn
-                        onClick={() => this.getExpense(expense._id)}
+                        onClick={() => this.props.history.push("/expenses/" + expense._id)}
                       />
                     </div>
                   )

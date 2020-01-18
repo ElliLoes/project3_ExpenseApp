@@ -1,15 +1,15 @@
 //client/components/Add.js
 import React from 'react';
-import { useState } from "react";
 import { Button } from 'react-bootstrap';
 import "./style.css";
 import API from "../../utils/API";
 import Nav from "../../components/Nav";
 import Form from 'react-bootstrap/Form';
 
-class AddExpense extends React.Component {
+class Expense extends React.Component {
     constructor(props) {
         super(props);
+        this.expenseId = props.match.params.id;
         this.state = {
             title: '',
             amount: '',
@@ -22,24 +22,36 @@ class AddExpense extends React.Component {
 
     componentDidMount() {
         this.loadCategories();
+        if (this.expenseId) {
+            this.loadExpense();
+        }
+    }
+
+    loadExpense = () => {
+        API.getExpense(this.expenseId)
+        .then(res => this.setState(res.data))
+        .catch(err => console.error(err));
     }
 
     loadCategories = () => {
         API.getCategories()
             .then(res => this.setState({ availableCategories: res.data }))
-            .catch(err => console.log(err));
+            .catch(err => console.error(err));
     };
 
-    addExpense = (e) => {
-        API.createExpense({
+    submit = (e) => {
+        const expenseData = {
             title: this.state.title,
             amount: this.state.amount,
             description: this.state.description,
             date: this.state.date,
             category: this.state.category
-        })
-            .then(res => this.props.history.push("/expenses"))
-            .catch(err => console.log(err))
+        };
+        const req = this.expenseId ? API.updateExpense(this.expenseId, expenseData) : API.createExpense(expenseData)
+
+        req
+            .then(_ => this.props.history.push("/expenses"))
+            .catch(err => console.error(err))
 
         // this.insertNewExpense(this);
     }
@@ -90,6 +102,7 @@ class AddExpense extends React.Component {
                     <Form.Control
                         as="select"
                         onChange={this.handleTextChange}
+                        value={this.state.category}
                     >
                         {this.state.availableCategories.map(category => {
                             return (
@@ -97,16 +110,12 @@ class AddExpense extends React.Component {
                             )
 
                         })}
-                        {/* <option value={1}>Food</option>
-                        <option value={2}>Transportation</option>
-                        <option value={3}>Household</option>
-                        <option value={4}>Leisure</option> */}
                     </Form.Control>
                 </Form.Group>
-                <Button onClick={this.addExpense}>Add Expense</Button>
+                <Button onClick={this.submit}>Add Expense</Button>
             </div>
         );
     }
 }
 
-export default AddExpense;
+export default Expense;

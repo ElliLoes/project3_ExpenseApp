@@ -19,6 +19,9 @@ export default {
   createExpense: function(expenseData) {
     return axios.post(base + "/api/expense", expenseData);
   },
+  updateExpense: function(id, expenseData) {
+    return axios.put(base + "/api/expense/" + id, expenseData);
+  },
 
   loginUser: function(loginData) {
     return axios.post(base + "/api/login", loginData);
