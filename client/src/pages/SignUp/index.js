@@ -30,7 +30,7 @@ export default function Signup(props) {
         setEmailValid(true);
         event.preventDefault();
         API.signupUser({ email: fields.email, password: fields.password })
-            .then(res => props.history.push("/home"))
+            .then(res => props.history.push("/"))
             .catch(err => {
                 setIsLoading(false);
                 setEmailValid(false);

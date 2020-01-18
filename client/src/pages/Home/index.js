@@ -19,7 +19,7 @@ class Home extends React.Component {
                 </div>
                 <Card body>
                     <Card.Title>View Expenses</Card.Title>
-                    <Card.Text><i class="far fa-cash-register"></i></Card.Text>
+                    <Card.Text></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/expenses"}>Go to see all Expenses</Button>
                 </Card>
                 <Card body>
