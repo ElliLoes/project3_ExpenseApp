@@ -1,12 +1,21 @@
+.form-group {
+  margin: 0 auto;
+  max-width: 320px;
+  padding-top: 20px;
+}
+
+.LoaderBtn {
+  margin: 0 auto;
+  max-width: 320px;
+  margin-top: 40px;
+}
+
 @media all and (min-width: 480px) {
     .Signup {
       padding: 60px 0;
     }
   
-    .Signup form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
+    
   }
   
   .Signup form span.help-block {

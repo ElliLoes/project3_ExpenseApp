@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-// import { Button, FormGroup, FormControl, ControlLabel, FormControlFeedback } from "react-bootstrap/Form";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "./style.css";
 import API from "../../utils/API";
+import Jumbotron from "../../components/Jumbotron";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
@@ -27,6 +27,7 @@ export default function Login(props) {
 
   return (
     <div className="Login">
+      <Jumbotron/>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email" bsSize="large" placeholder="e-mail">
           <Form.Label>Email</Form.Label>
@@ -54,9 +55,9 @@ export default function Login(props) {
           Login
         </Button>
         <br></br>
-        <Button block bsSize="large" disabled={!validateForm()} type="submit">
-          Register
-        </Button>
+        <p>
+          <a href="/signup">Don't have an account already?<br/> Signup here!</a>
+        </p>
       </Form>
     </div>
   );

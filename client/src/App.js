@@ -5,7 +5,7 @@ import Expenses from "./pages/Expenses";
 import Home from "./pages/Home";
 import AddExpense from "./pages/AddExpense";
 import SignUp from "./pages/SignUp";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
 import { Container } from "./components/Grid";
 import './App.css';
 
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <div>
         <Container>
-          <Nav />
+          {/* <Nav /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={LoginPage} />

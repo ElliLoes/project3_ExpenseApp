@@ -5,6 +5,7 @@ import LoaderBtn from "../../components/LoaderBtn";
 import "./style.css";
 import useFormFields from '../../utils/useFormFields';
 import API from "../../utils/API";
+import Jumbotron from "../../components/Jumbotron";
 
 
 export default function Signup(props) {
@@ -40,6 +41,7 @@ export default function Signup(props) {
     function renderForm() {
         return (
             <form onSubmit={handleSubmit}>
+                <Jumbotron/>
                 <Form.Group controlId="email" bsSize="large">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
