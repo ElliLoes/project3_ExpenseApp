@@ -15,6 +15,7 @@ background-image: ('expenseApp.png');
 margin-bottom: 0;
 border-bottom-left-radius: 30px;
 border-bottom-right-radius: 30px;
+opacity: .9;
 }
 
 img {

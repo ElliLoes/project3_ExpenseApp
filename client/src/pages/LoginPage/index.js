@@ -4,10 +4,12 @@ import Button from 'react-bootstrap/Button';
 import "./style.css";
 import API from "../../utils/API";
 import Jumbotron from "../../components/Jumbotron";
+import LoaderBtn from "../../components/LoaderBtn";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [emailValid, setEmailValid] = useState(true);
 
   function validateForm() {
@@ -15,12 +17,14 @@ export default function Login(props) {
   }
 
   function handleSubmit(event) {
+    setIsLoading(true);
     setEmailValid(true);
     event.preventDefault();
     API.loginUser({ email: email, password: password })
       .then(res => props.history.push("/home"))
       .catch(err => {
         console.log(err);
+        setIsLoading(false);
         setEmailValid(false)
       });
   }
@@ -51,9 +55,15 @@ export default function Login(props) {
           />
         </Form.Group>
         <br></br>
-        <Button block bsSize="large" disabled={!validateForm()} type="submit">
-          Login
-        </Button>
+        <LoaderBtn
+                    block
+                    type="submit"
+                    bsSize="large"
+                    isLoading={isLoading}
+                    disabled={!validateForm()}
+                >
+                    Login
+                </LoaderBtn>
         <br></br>
         <p>
           <a href="/signup">Don't have an account already?<br/> Signup here!</a>

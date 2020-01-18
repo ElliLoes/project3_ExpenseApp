@@ -18,22 +18,22 @@ class Home extends React.Component {
                 </Card>
                 </div>
                 <Card body>
-                    <Card.Title>Special Title Treatment</Card.Title>
+                    <Card.Title>View Expenses</Card.Title>
                     <Card.Text><i class="far fa-cash-register"></i></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/expenses"}>Go to see all Expenses</Button>
                 </Card>
                 <Card body>
-                    <Card.Title>Special Title Treatment</Card.Title>
+                    <Card.Title>View Categories</Card.Title>
                     <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
                     <Button className="navBtn">View your categories</Button>
                 </Card>
                 <Card body>
-                    <Card.Title>Special Title Treatment</Card.Title>
+                    <Card.Title>Setup Categories</Card.Title>
                     <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
                     <Button className="navBtn">Go to set up a spending category</Button>
                 </Card>
                 <Card body>
-                    <Card.Title>Special Title Treatment</Card.Title>
+                    <Card.Title>Setup Saving Goal</Card.Title>
                     <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
                     <Button className="navBtn">Setup your spending goals</Button>
                 </Card>
