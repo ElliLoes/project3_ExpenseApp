@@ -1,6 +1,38 @@
 const db = require("../models");
 
+const defaultCategories = [
+  {
+    title: "Food",
+    description: "Any expenses related to food, groceries and eating out",
+  },
+  {
+    title: "Transportation",
+    description: "Any expenses related to public transport or car expenses",
+  },
+  {
+    title: "Household",
+    description: "Any expenses related to household expenses",
+  },
+  {
+    title: "Leisure",
+    description: "Any expenses related to leisure expenses",
+  }
+];
+
+
+
 module.exports = {
+  createDefaultCategories: function (userId) {
+    const createCategories = defaultCategories.map(category =>
+      db.Category
+        .create({
+          title: category.title,
+          description: category.description,
+          user: userId
+        })
+    );
+    return Promise.all(createCategories);
+  },
   findAll: function (req, res) {
     db.Category
       .find({ user: req.user })

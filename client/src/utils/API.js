@@ -16,7 +16,7 @@ export default {
     return axios.delete(base + "/api/expense/" + id);
   },
   // Saves a expense to the database
-  saveExpense: function(expenseData) {
+  createExpense: function(expenseData) {
     return axios.post(base + "/api/expense", expenseData);
   },
 
@@ -26,5 +26,15 @@ export default {
 
   signupUser: function(signupData) {
     return axios.post(base + "/api/signup", signupData);
+  },
+
+  getCategories: function() {
+    return axios.get(base + "/api/category");
+  },
+  getCategory: function(id) {
+    return axios.get(base + "/api/category/" + id);
+  },
+  createCategory: function(categoryData) {
+    return axios.post(base + "/api/category", categoryData);
   }
 };

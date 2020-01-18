@@ -7,7 +7,7 @@ const expenseSchema = new Schema({
   description: String,
   date: { type: Date, default: Date.now },
   category: { type: Schema.Types.ObjectId, ref: 'Category' },
-  user: { type: Schema.Types.ObjectId, ref: 'User' }
+  user: { type: Schema.Types.ObjectId, ref: 'User', required: true }
 });
 
 const Expense = mongoose.model("Expense", expenseSchema);

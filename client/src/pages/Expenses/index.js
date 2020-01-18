@@ -59,7 +59,6 @@ class Expenses extends Component {
             {this.state.savedExpenses.length > 0 ?
               <ExpenseList>
                 {this.state.savedExpenses.map(expense => {
-                  console.log(expense)
                   return (
                     <div key={expense._id}>
                       <ExpenseListItem

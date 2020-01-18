@@ -5,7 +5,7 @@ const categorySchema = new Schema({
   title: { type: String, required: true },
   description: String,
   deleted: { type: Boolean, default: false },
-  user: { type: Schema.Types.ObjectId, ref: 'User' }
+  user: { type: Schema.Types.ObjectId, ref: 'User', required: true }
 });
 
 const Category = mongoose.model("Category", categorySchema);

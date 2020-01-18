@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import "./style.css";
 import API from "../../utils/API";
 import Nav from "../../components/Nav";
+import Form from 'react-bootstrap/Form';
 
 class AddExpense extends React.Component {
     constructor(props) {
@@ -14,13 +15,24 @@ class AddExpense extends React.Component {
             amount: '',
             description: '',
             date: '',
-            category: ''
+            category: '',
+            availableCategories: []
         }
-        console.log(this);
     }
+
+    componentDidMount() {
+        this.loadCategories();
+    }
+
+    loadCategories = () => {
+        API.getCategories()
+            .then(res => this.setState({ availableCategories: res.data }))
+            .catch(err => console.log(err));
+    };
+
     addExpense = (e) => {
-        API.saveExpense({ 
-            title: this.state.title, 
+        API.createExpense({
+            title: this.state.title,
             amount: this.state.amount,
             description: this.state.description,
             date: this.state.date,
@@ -33,49 +45,65 @@ class AddExpense extends React.Component {
     }
 
     handleTextChange = (e) => {
-        console.log(e.target.name, e.target.value, "textchange");
-        if (e.target.name === "title") {
-            this.setState({
-                title: e.target.value
-            });
-        }
-        if (e.target.name === "amount") {
-            this.setState({
-                amount: e.target.value
-            });
-        }
-        if (e.target.name === "description") {
-            this.setState({
-                description: e.target.description
-            });
-        }
-        if (e.target.name === "date") {
-            this.setState({
-                date: e.target.date
-            });
-        }
-        if (e.target.name === "category") {
-            this.setState({
-                category: e.target.category
-            });
-        }
+        console.log(e.target.id, e.target.value, "textchange");
+        this.setState({
+            [e.target.id]: e.target.value
+        });
 
     }
     render() {
         return (
             <div>
                 <Nav />
-                <fieldset>
-                <li className="form-row"><label htmlFor="title">Title</label><input type="text" id="title" name="title" value={this.state.title} onChange={this.handleTextChange}></input></li>
-                <li className="form-row"><label htmlFor="amount">Amount:</label><input type="number" id="amount" name="amount" value={this.state.amount} onChange={this.handleTextChange}></input></li>
-                <li className="form-row"><label htmlFor="description">Description:</label><input type="text" id="description" name="description" value={this.state.description} onChange={this.handleTextChange}></input></li>
-                <li className="form-row"><label htmlFor="date">Date:</label><input type="date" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input></li>
-                <li className="form-row"><label htmlFor="category">Category:</label><input type="text" id="category" name="category" value={this.state.category} onChange={this.handleTextChange}></input></li>
-                </fieldset>
-                <div className='button-center'>
-                    <br />
-                    <Button bsStyle="success" bsSize="small" onClick={this.addExpense}>Add Expense</Button>
-                </div>
+                <Form.Group controlId="title">
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control
+                        autoFocus
+                        value={this.state.title}
+                        onChange={this.handleTextChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="amount">
+                    <Form.Label>Amount</Form.Label>
+                    <Form.Control
+                        value={this.state.amount}
+                        onChange={this.handleTextChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="description">
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control
+                        value={this.state.description}
+                        onChange={this.handleTextChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="date">
+                    <Form.Label>Date</Form.Label>
+                    <Form.Control
+                        type="date"
+                        value={this.state.date}
+                        onChange={this.handleTextChange}
+                    />
+                </Form.Group>
+                <Form.Group controlId="category">
+                    <Form.Label>Category</Form.Label>
+                    <Form.Control
+                        as="select"
+                        onChange={this.handleTextChange}
+                    >
+                        {this.state.availableCategories.map(category => {
+                            return (
+                                <option value={category._id} key={category._id}>{category.title}</option>
+                            )
+
+                        })}
+                        {/* <option value={1}>Food</option>
+                        <option value={2}>Transportation</option>
+                        <option value={3}>Household</option>
+                        <option value={4}>Leisure</option> */}
+                    </Form.Control>
+                </Form.Group>
+                <Button onClick={this.addExpense}>Add Expense</Button>
             </div>
         );
     }

@@ -2,17 +2,6 @@ const db = require("../models");
 
 module.exports = {
   findAll: function (req, res) {
-    // if (!req.query.user) {
-    //   res.status(400).json({ error: "Bad Request", msg: 'No "user" specified' });
-    //   return;
-    // }
-    // if (!req.query.user.match(/^[0-9a-fA-F]{24}$/)) {
-    //   res.status(400).json({ error: "Bad Request", msg: 'Invalid user id' });
-    //   return;
-    // }
-
-    console.log("user", req.user);
-
     db.Expense
       .find({ user: req.user })
       .sort({ date: -1 })
@@ -26,9 +15,11 @@ module.exports = {
       .catch(err => res.status(503).json(err));
   },
   create: function (req, res) {
-    console.log('create expense', req.body);
     db.Expense
-      .create(req.body)
+      .create({
+        ...req.body,
+        user: req.user
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(503).json(err));
   },
