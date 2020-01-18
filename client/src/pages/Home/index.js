@@ -4,13 +4,13 @@ import Card from "react-bootstrap/Card";
 import "./style.css";
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import Nav from "../../components/Nav";
+import Nav from "../../components/Nav";
 
 class Home extends React.Component {
     render() {
         return (
             <div>
-                {/* <Nav /> */}
+                <Nav />
                 <div className="expenseSum">
                 <Card body>
                     <Card.Title>Your Balance</Card.Title>

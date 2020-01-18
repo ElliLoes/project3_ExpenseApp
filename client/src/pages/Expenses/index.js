@@ -8,6 +8,7 @@ import NoExpenses from "../../components/NoExpenses";
 import { ExpenseList, ExpenseListItem } from "../../components/List";
 import ModifyBtn from "../../components/ModifyBtn";
 import AddBtn from "../../components/AddBtn";
+import Nav from "../../components/Nav";
 // import AddExpense from "../../components/AddExpense";
 // import AddExpense from "../../pages/AddExpense";
 
@@ -47,6 +48,7 @@ class Expenses extends Component {
   render() {
     return (
       <div>
+        <Nav />
         <Row>
           <AddBtn onClick={() => window.location.href = "/expenses/add"}
             Add Expense

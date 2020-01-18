@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from 'react-bootstrap';
 import "./style.css";
 import API from "../../utils/API";
+import Nav from "../../components/Nav";
 
 class AddExpense extends React.Component {
     constructor(props) {
@@ -63,6 +64,7 @@ class AddExpense extends React.Component {
     render() {
         return (
             <div>
+                <Nav />
                 <fieldset>
                 <li className="form-row"><label htmlFor="title">Title</label><input type="text" id="title" name="title" value={this.state.title} onChange={this.handleTextChange}></input></li>
                 <li className="form-row"><label htmlFor="amount">Amount:</label><input type="number" id="amount" name="amount" value={this.state.amount} onChange={this.handleTextChange}></input></li>

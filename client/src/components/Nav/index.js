@@ -10,11 +10,14 @@ function Nav() {
       <a className="navbar-brand" id="homeLink" href="/">
         Home
       </a>
-     <ul className="navbar-nav">
+      <a className="navbar-brand" id="expensesLink" href="/expenses">
+        Expenses
+      </a>
+     {/* <ul className="navbar-nav">
      <li className="nav-item">
        <a className="nav-link navbar-brand" id="savedLink" href="/expenses">Expenses</a>
      </li>
-   </ul>
+   </ul> */}
  </nav>
  <Jumbotron/>
  </div>
