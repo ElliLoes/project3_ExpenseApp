@@ -4,6 +4,7 @@ module.exports = {
   findAll: function (req, res) {
     db.Expense
       .find({ user: req.user })
+      .populate("category")
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(503).json(err));
