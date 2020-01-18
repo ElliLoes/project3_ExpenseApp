@@ -2,6 +2,8 @@ const db = require("../models");
 const jwt = require("jsonwebtoken");
 const categoryController = require("./categoryController");
 
+const secret = process.env.JWT_SECRET || "secret"
+
 module.exports = {
     login: function (req, res) {
         console.log("login", req.body);
@@ -23,7 +25,7 @@ module.exports = {
                         res.status(403).json();
                         return;
                     }
-                    const token = jwt.sign({ user: dbUser._id }, "secret", {
+                    const token = jwt.sign({ user: dbUser._id }, secret, {
                         expiresIn: 10000000
                     });
                     res.cookie("token", token);
@@ -45,7 +47,7 @@ module.exports = {
             .then(dbUser => {
                 categoryController.createDefaultCategories(dbUser._id)
                     .then(_ => {
-                        const token = jwt.sign({ user: dbUser._id }, "secret", {
+                        const token = jwt.sign({ user: dbUser._id }, secret, {
                             expiresIn: 10000000
                         });
                         res.cookie("token", token);
