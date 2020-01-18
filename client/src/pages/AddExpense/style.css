@@ -40,8 +40,8 @@ fieldset {
 .btn-group-sm>.btn, .btn-sm {
     margin-left: 20px;
     height: 50px;
-    background-color: #fccd04!important;
-    border-color: #fccd04;
+    /* background-color: #fccd04!important;
+    border-color: #fccd04; */
     color: black;
     margin-bottom: 20px;
     font-size: 15px;

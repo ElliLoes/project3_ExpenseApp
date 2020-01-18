@@ -9,6 +9,8 @@ import { ExpenseList, ExpenseListItem } from "../../components/List";
 import ModifyBtn from "../../components/ModifyBtn";
 import AddBtn from "../../components/AddBtn";
 import Nav from "../../components/Nav";
+import "./style.css";
+
 // import AddExpense from "../../components/AddExpense";
 // import AddExpense from "../../pages/AddExpense";
 
