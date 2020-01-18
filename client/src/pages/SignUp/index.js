@@ -41,7 +41,7 @@ export default function Signup(props) {
     function renderForm() {
         return (
             <form onSubmit={handleSubmit}>
-                <Jumbotron/>
+                <Jumbotron />
                 <Form.Group controlId="email" bsSize="large">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -80,6 +80,9 @@ export default function Signup(props) {
                 >
                     Signup
                 </LoaderBtn>
+                <p>
+                    <a href="/login">You have an account already?<br/> Login here!</a>
+                </p>
             </form>
         );
     }
