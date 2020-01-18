@@ -57,7 +57,7 @@ function createUser() {
     });
 };
 
-function createCategory() {
+function createCategory(user) {
     return new Promise((resolve, reject) => {
         db.Category
             .find()
@@ -68,7 +68,8 @@ function createCategory() {
                     db.Category.create(
                         {
                             "title": "category1",
-                            "description": "food"
+                            "description": "food",
+                            'user': user._id
                         }
                     )
                         .then((dbCategory) => {
@@ -113,7 +114,7 @@ function createData() {
     // createExpense(user, cat);
 
     createUser()
-        .then(user => createCategory()
+        .then(user => createCategory(user)
             .then(cat => createExpense(user, cat))
         );
 

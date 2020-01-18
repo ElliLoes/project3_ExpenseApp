@@ -9,7 +9,7 @@ router.route("/")
 
 // Matches with "/api/expense/:id"
 router
-  .route("/:id", auth)
+  .route("/:id")
   .get(auth, expenseController.findById)
   .put(auth, expenseController.update)
   .delete(auth, expenseController.remove);
