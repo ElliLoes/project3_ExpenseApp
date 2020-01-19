@@ -47,7 +47,10 @@ module.exports = {
   },
   create: function (req, res) {
     db.Category
-      .create(req.body)
+      .create({
+        ...req.body,
+        user: req.user
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(503).json(err));
   },

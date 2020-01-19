@@ -45,7 +45,7 @@ class Expense extends React.Component {
             amount: this.state.amount,
             description: this.state.description,
             date: this.state.date,
-            category: this.state.category
+            category: this.state.category || this.state.availableCategories[0]._id
         };
         const req = this.expenseId ? API.updateExpense(this.expenseId, expenseData) : API.createExpense(expenseData)
 

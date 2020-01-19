@@ -6,6 +6,7 @@ import Categories from "./pages/Categories";
 import Home from "./pages/Home";
 import Expense from "./pages/Expense";
 import SignUp from "./pages/SignUp";
+import AddCategory from "./pages/AddCategory";
 // import Nav from "./components/Nav";
 import { Container } from "./components/Grid";
 import './App.css';
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/expenses" component={Expenses} />
             <Route exact path="/expenses/:id" component={Expense} />
             <Route exact path="/categories" component={Categories} />
+            <Route exact path="/categories/add" component={AddCategory} />
           </Switch>
         </Container>
       </div>
