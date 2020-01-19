@@ -10,24 +10,23 @@ import AddCategory from "./pages/AddCategory";
 // import Nav from "./components/Nav";
 import { Container } from "./components/Grid";
 import './App.css';
-import { useCookies } from 'react-cookie';
+import cookie from 'react-cookies'
 
 function App() {
-  const [cookies] = useCookies();
   return (
     <Router>
       <div>
         <Container>
           {/* <Nav /> */}
           <Switch>
-            <LoggedInRoute cookies={cookies} exact path="/" component={Home} />
+            <LoggedInRoute exact path="/" component={Home} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/signup" component={SignUp} />
-            <LoggedInRoute cookies={cookies} exact path="/expenses/add" component={Expense} />
-            <LoggedInRoute cookies={cookies} exact path="/expenses" component={Expenses} />
-            <LoggedInRoute cookies={cookies} exact path="/expenses/:id" component={Expense} />
-            <LoggedInRoute cookies={cookies} exact path="/categories" component={Categories} />
-            <LoggedInRoute cookies={cookies} exact path="/categories/add" component={AddCategory} />
+            <LoggedInRoute exact path="/expenses/add" component={Expense} />
+            <LoggedInRoute exact path="/expenses" component={Expenses} />
+            <LoggedInRoute exact path="/expenses/:id" component={Expense} />
+            <LoggedInRoute exact path="/categories" component={Categories} />
+            <LoggedInRoute exact path="/categories/add" component={AddCategory} />
           </Switch>
         </Container>
       </div>
@@ -35,9 +34,9 @@ function App() {
   );
 }
 
-const LoggedInRoute = ({ component: Component, cookies, ...rest }) => (
+const LoggedInRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
-    cookies.token
+    cookie.load('token')
       ? <Component {...props} />
       : <Redirect to='/login' />
   )} />

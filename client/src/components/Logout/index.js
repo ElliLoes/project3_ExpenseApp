@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { withCookies } from 'react-cookie';
+import cookie from 'react-cookies'
 
 class Logout extends Component {
     constructor(props) {
@@ -8,12 +8,10 @@ class Logout extends Component {
         this.state = {
             navigate: false
         };
-        const { cookies } = props;
-        this.cookies = cookies
     }
 
     logout = () => {
-        this.cookies.remove("token");
+        cookie.remove('token');
         this.setState({ navigate: true });
     };
 
@@ -28,4 +26,4 @@ class Logout extends Component {
     }
 }
 
-export default withCookies(Logout);
+export default Logout;
