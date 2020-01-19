@@ -14,8 +14,6 @@ import "./style.css";
 // import AddExpense from "../../components/AddExpense";
 // import AddExpense from "../../pages/AddExpense";
 
-
-
 class Expenses extends Component {
   state = {
     savedExpenses: [],
@@ -28,9 +26,8 @@ class Expenses extends Component {
 
   loadExpenses = () => {
     API.getExpenses()
-      .then(res =>
-        this.setState({ savedExpenses: res.data })
-      )
+      .then(res => {this.setState({savedExpenses: res.data})
+      })
       .catch(err => console.log(err));
   };
 
