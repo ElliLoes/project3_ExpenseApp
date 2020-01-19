@@ -16,22 +16,45 @@ import "./style.css";
 
 
 class Categories extends Component {
-    state = {
-        categories: [],
-        initialized: true
-    };
-
-    componentDidMount() {
-        this.loadCategories();
+    constructor(props) {
+        super(props);
+        this.state = {
+            categories: [],
+            categoryTotals: {},
+            initialized: true
+        }
     }
 
-    loadCategories = () => {
-        API.getCategories()
+    componentDidMount() {
+        this.loadData();
+    }
+
+    loadData = () => {
+        API.getExpenses()
+        .then(res => {
+            // this.setState(res.data);
+            const expenses = res.data;
+            const categoryTotals = {};
+            expenses.forEach (expense => {
+                const categoryId = expense.category._id;
+                if (categoryTotals[categoryId]) {
+                  categoryTotals[categoryId] = categoryTotals[categoryId] + expense.amount;
+                } else {
+                  categoryTotals[categoryId] = expense.amount;
+                }
+              });
+            console.log('expenses:', categoryTotals);
+            API.getCategories()
             .then(res =>
-                this.setState({ categories: res.data })
+                this.setState({ 
+                    categories: res.data,
+                    categoryTotals
+                 })
             )
             .catch(err => console.log(err));
-    };
+        })
+        .catch(err => console.error(err));
+    }
 
     render() {
         return (
@@ -44,7 +67,6 @@ class Categories extends Component {
                     <Col size="md-12">
                         <CategoryList>
                             {this.state.categories.map(category => {
-                                console.log(category)
                                 return (
                                     <div key={category._id}>
                                         <CategoryListItem
@@ -52,6 +74,7 @@ class Categories extends Component {
                                             description={category.description}
                                             deleted={category.deleted}
                                             user={category.user}
+                                            total={this.state.categoryTotals[category._id]}
                                         />
                                     </div>
                                 )

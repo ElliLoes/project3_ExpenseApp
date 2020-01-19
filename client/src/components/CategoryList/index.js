@@ -12,7 +12,6 @@ export function CategoryList({ children }) {
 export class CategoryListItem extends React.Component {
 
   render() {
-    console.log(this.props);
     return (
       <li>
         <Container>
@@ -22,6 +21,7 @@ export class CategoryListItem extends React.Component {
             </Col> */}
             <Col size="xs-8 sm-9">
               <h3>{this.props.title}<span></span></h3>
+              <h2>${this.props.total || 0}</h2>
               <p>
                 {this.props.description}
               </p>
