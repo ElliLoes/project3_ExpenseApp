@@ -1,5 +1,6 @@
 import React from "react";
 import Jumbotron from "../Jumbotron";
+import Logout from "../Logout";
 import "./style.css";
 
 
@@ -18,6 +19,7 @@ function Nav() {
        <a className="nav-link navbar-brand" id="savedLink" href="/expenses">Expenses</a>
      </li>
    </ul> */}
+   <Logout/>
  </nav>
  <Jumbotron/>
  </div>

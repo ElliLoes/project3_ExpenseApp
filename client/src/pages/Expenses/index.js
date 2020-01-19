@@ -32,7 +32,6 @@ class Expenses extends Component {
         this.setState({ savedExpenses: res.data })
       )
       .catch(err => console.log(err));
-    console.log(this.state.savedExpenses, "the state");
   };
 
   deleteExpense = id => {

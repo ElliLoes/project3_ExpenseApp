@@ -21,7 +21,7 @@ export default function Login(props) {
     setEmailValid(true);
     event.preventDefault();
     API.loginUser({ email: email, password: password })
-      .then(res => props.history.push("/home"))
+      .then(res => props.history.push("/"))
       .catch(err => {
         console.log(err);
         setIsLoading(false);
