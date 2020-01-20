@@ -14,7 +14,7 @@ class Expense extends React.Component {
             title: '',
             amount: '',
             description: '',
-            date: '',
+            date: new Date().toISOString().split('T')[0],
             category: '',
             availableCategories: []
         }

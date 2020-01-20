@@ -9,7 +9,8 @@ import ModifyBtn from "../../components/ModifyBtn";
 import AddCategoryBtn from "../../components/AddCategoryBtn";
 import Nav from "../../components/Nav";
 import "./style.css";
-import PieChart from 'react-minimal-pie-chart';
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+// import PieChart from 'react-minimal-pie-chart';
 // import AddExpense from "../../components/AddExpense";
 // import AddExpense from "../../pages/AddExpense";
 
@@ -48,7 +49,7 @@ class Categories extends Component {
                 const data = Object.keys(categoryTotals).map((key, i) => {
                     const categoryTotal = categoryTotals[key];
                     return {
-                        title: categoryTotal.title,
+                        name: categoryTotal.title,
                         value: categoryTotal.total,
                         color: this.findColor(i)
                     };
@@ -80,15 +81,22 @@ class Categories extends Component {
                         Add Category
                     />
                     <Col size="md-12">
-                    <PieChart 
-                        data={this.state.data}
-                        // radius={ 150 }
-                        // hole={ 50 }
-                        // colors={ colors }
-                        // label={true}
-                        // percent={ true }
-                        // labelPosition={ 100 }
-                    />
+                        {/* <ResponsiveContainer> */}
+                            <PieChart
+                                width={400} height={400}
+                            >
+                                <Pie dataKey="value" isAnimationActive={false} data={this.state.data}
+                                    // cx={200} cy={200} outerRadius={80} 
+                                    fill="#8884d8"
+                                    label
+                                >
+                                    {
+                                        this.state.data.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)
+                                    }
+                                </Pie>
+                                <Tooltip />
+                            </PieChart>
+                        {/* </ResponsiveContainer> */}
                     </Col>
                     <Col size="md-12">
                         <CategoryList>
