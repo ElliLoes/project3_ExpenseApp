@@ -1,8 +1,8 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 import { useState } from "react";
-import Button from "../../components/Button";
-// import "./style.css";
+import LoaderBtn from "../../components/LoaderBtn";
+import "./style.css";
 import useFormFields from '../../utils/useFormFields';
 import API from "../../utils/API";
 import Nav from "../../components/Nav";
@@ -45,14 +45,14 @@ export default function AddExpense(props) {
                         onChange={handleFieldChange}
                     />
                 </Form.Group>
-                <Button
+                <LoaderBtn
                     block
                     type="submit"
                     bsSize="large"
                     isLoading={isLoading}
                 >
                     Add Category
-                </Button>
+                </LoaderBtn>
             </form>
         );
     }

@@ -77,7 +77,7 @@ class Categories extends Component {
             <div>
                 <Nav />
                 <Row>
-                    <AddCategoryBtn
+                    <AddCategoryBtn onClick={() => window.location.href = "/categories/add"}
                         Add Category
                     />
                     <Col size="md-12">

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import cookie from 'react-cookies'
+import cookie from 'react-cookies';
+import "./style.css"
 
 class Logout extends Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Logout extends Component {
             return <Redirect to="/login" push={true} />;
         }
 
-        return <h4 onClick={this.logout}>Log out</h4>;
+        return <h5 onClick={this.logout}>Log out</h5>;
     }
 }
 

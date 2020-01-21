@@ -25,8 +25,8 @@ export class ExpenseListItem extends React.Component {
               <h3>{this.props.title}<span></span></h3>
               <h2>$ {this.props.amount}</h2>
               <p>
-                {this.props.description}
-                {this.props.date}
+                {this.props.description}<br></br>
+                {this.props.date}<br></br>
                 {this.props.category}
               </p>
             </Col>
