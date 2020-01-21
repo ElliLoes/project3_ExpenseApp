@@ -34,3 +34,7 @@
     padding-bottom: 15px;
 }
 
+.card-text {
+    float: none;
+}
+

@@ -50,7 +50,7 @@ class Home extends React.Component {
                 </Card>
                 <Card body>
                     <Card.Title>View Categories</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faChartPie} pulse size="10x" /></Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faChartPie} pulse size="10x"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/categories"}>View your categories</Button>
                 </Card>
                 <Card body>
