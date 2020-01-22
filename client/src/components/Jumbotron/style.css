@@ -9,13 +9,11 @@ background-size: cover;
 height: 225px;
 width: 100%;
 
-background: #17E9E0;
+background: #66b9bf;
 background-image: ('expenseApp.png');
-/* border-radius: 30px; */
 margin-bottom: 0;
 border-bottom-left-radius: 30px;
 border-bottom-right-radius: 30px;
-opacity: .9;
 }
 
 img {

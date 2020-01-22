@@ -50,7 +50,7 @@ class Expenses extends Component {
               <ExpenseList>
                 {this.state.savedExpenses.map(expense => {
                   return (
-                    <div className="expenseList" key={expense._id}>
+                    <div id="expenseList" key={expense._id}>
                       <ExpenseListItem
                         title={expense.title}
                         amount={expense.amount}

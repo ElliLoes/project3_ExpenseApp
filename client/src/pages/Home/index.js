@@ -58,7 +58,7 @@ class Home extends React.Component {
                 <Card body>
                     <Card.Title>Setup Categories</Card.Title>
                     <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
-                    <Button className="navBtn" onClick={() => window.location.href = "/categories/add"}>Go to set up a spending category</Button>
+                    <Button className="navBtn" onClick={() => window.location.href = "/categories/add"}>Go to set up a category</Button>
                 </Card>
                 <Card body>
                     <Card.Title>Setup Saving Goal</Card.Title>

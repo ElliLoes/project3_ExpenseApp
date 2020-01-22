@@ -1,18 +1,11 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
-// import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-// import { Link } from "react-router-dom";
 import { Col, Row } from "../../components/Grid";
 import { CategoryList, CategoryListItem } from "../../components/CategoryList";
-import ModifyBtn from "../../components/ModifyBtn";
 import AddCategoryBtn from "../../components/AddCategoryBtn";
 import Nav from "../../components/Nav";
 import "./style.css";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
-// import PieChart from 'react-minimal-pie-chart';
-// import AddExpense from "../../components/AddExpense";
-// import AddExpense from "../../pages/AddExpense";
+import { PieChart, Pie, Cell, Tooltip } from 'recharts';
 
 const colors = ['#43A19E', '#7B43A1', '#F2317A', '#FF9824', '#58CF6C'];
 
@@ -81,7 +74,6 @@ class Categories extends Component {
                         Add Category
                     />
                     <Col size="md-12">
-                        {/* <ResponsiveContainer> */}
                             <PieChart
                                 width={400} height={400}
                             >
@@ -96,7 +88,6 @@ class Categories extends Component {
                                 </Pie>
                                 <Tooltip />
                             </PieChart>
-                        {/* </ResponsiveContainer> */}
                     </Col>
                     <Col size="md-12">
                         <CategoryList>

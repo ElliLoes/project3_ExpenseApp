@@ -7,21 +7,24 @@
   }
 
   button {
-    background-color: #A64Ac9!important;
+    background-color: #e37222!important;
     color: white!important;
     font-weight: bold!important;
-    border-color: #A64Ac9!important;
+    border-color: #07889b!important;
     margin-top: 20px;
     /* margin-bottom: 40px; */
   }
 
-  p {
-    margin-top: 60px;
+  .logIn p {
+    margin-top: 30px;
     text-align: center;
-  }
+    float: none; 
+  } 
 
-  a {
+  .logIn a {
     color: white;
+    /* margin-left: 50px; */
+
   }
 
 

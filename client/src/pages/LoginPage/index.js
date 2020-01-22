@@ -65,9 +65,11 @@ export default function Login(props) {
                     Login
                 </LoaderBtn>
         <br></br>
+        <div className="logIn">
         <p>
-          <a href="/signup">Don't have an account already?<br/> Signup here!</a>
+          <a  href="/signup">Don't have an account already?<br/> Signup here!</a>
         </p>
+        </div>
       </Form>
     </div>
   );

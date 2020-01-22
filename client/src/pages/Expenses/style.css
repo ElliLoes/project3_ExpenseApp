@@ -2,43 +2,41 @@
     margin-left: 40px;
 }
 
-.expenseList {
-    /* max-width: 320px; */
+#expenseList {
     margin-top: 5px;
-    background-color: teal;
+    background-color: #373737;
     padding-left: 5px;
     text-align:left;
-    display: inline;
-    /* margin: 20px auto; */   
+    display: inline;  
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+} 
 
-}
-
-.expenseList h2, h3, p {
+#expenseList h2, h3, p {
     float: left;
 }
 
-.expenseList h3 {
+#expenseList h3 {
     margin-right: 10px;
 }
 
-.expenseList h2, h3 {
+#expenseList h2, h3 {
     padding-top: 25px;
 }
 
-.expenseList p {
+#expenseList p {
     margin-left: 20px;
 }
 
-.expenseList button {
+#expenseList button {
     margin-top: 0;
 }
 
 
-/* .expenseList h2 {
+#expenseList h2 {
     margin-top: 0;
 }
 
-.expenseList p {
+#expenseList p {
     margin-top: 0;
 
-}  */
+} 
