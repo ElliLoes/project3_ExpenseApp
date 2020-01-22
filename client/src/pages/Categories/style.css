@@ -1,3 +1,29 @@
 .primary-btn {
     margin-left: 40px;
 }
+
+.categoryDiv {
+    margin-top: 5px;
+    background-color: teal;
+    padding-left: 5px;
+    text-align:left;
+    display: inline-block;
+}
+
+.categoryDiv p {
+    margin-top: 0;
+    text-align: left;
+}
+
+.categoryDiv h3 {
+    margin-left: 5px;
+}
+
+.categoryDiv h2 {
+    margin-left: 5px;
+    margin-top: 20px;
+    float: right;
+    padding-right: 10px;
+    font-weight: bold;
+    color: pink;
+}

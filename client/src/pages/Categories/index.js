@@ -102,7 +102,7 @@ class Categories extends Component {
                         <CategoryList>
                             {this.state.categories.map(category => {
                                 return (
-                                    <div key={category._id}>
+                                    <div className="categoryDiv" key={category._id}>
                                         <CategoryListItem
                                             title={category.title}
                                             description={category.description}
