@@ -112,7 +112,7 @@ class Expense extends React.Component {
                         })}
                     </Form.Control>
                 </Form.Group>
-                <Button onClick={this.submit}>Add Expense</Button>
+                <Button className="addExpense" onClick={this.submit}>Add Expense</Button>
             </div>
         );
     }

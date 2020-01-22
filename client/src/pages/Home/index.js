@@ -3,8 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Card from "react-bootstrap/Card";
 import "./style.css";
 import API from "../../utils/API";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChartPie } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartPie } from '@fortawesome/free-solid-svg-icons';
+import { faCoins } from '@fortawesome/free-solid-svg-icons';
+
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Nav from "../../components/Nav";
@@ -45,12 +47,12 @@ class Home extends React.Component {
                 </div>
                 <Card body>
                     <Card.Title>View Expenses</Card.Title>
-                    <Card.Text></Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faCoins} size="9x" color="#ff922b"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/expenses"}>Go to see all Expenses</Button>
                 </Card>
                 <Card body>
                     <Card.Title>View Categories</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faChartPie} pulse size="10x"/></Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faChartPie} size="9x"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/categories"}>View your categories</Button>
                 </Card>
                 <Card body>
