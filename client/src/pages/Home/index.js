@@ -4,11 +4,7 @@ import Card from "react-bootstrap/Card";
 import "./style.css";
 import API from "../../utils/API";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartPie } from '@fortawesome/free-solid-svg-icons';
-import { faCoins } from '@fortawesome/free-solid-svg-icons';
-
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartPie, faCoins, faCat, faCashRegister } from '@fortawesome/free-solid-svg-icons';
 import Nav from "../../components/Nav";
 
 class Home extends React.Component {
@@ -47,22 +43,22 @@ class Home extends React.Component {
                 </div>
                 <Card body>
                     <Card.Title>View Expenses</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faCoins} size="9x" color="#ff922b"/></Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faCoins} size="9x" color="#FF9824"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/expenses"}>Go to see all Expenses</Button>
                 </Card>
                 <Card body>
                     <Card.Title>View Categories</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faChartPie} size="9x"/></Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faChartPie} size="9x" color="#FF9824"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/categories"}>View your categories</Button>
                 </Card>
                 <Card body>
                     <Card.Title>Setup Categories</Card.Title>
-                    <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faCat} size="9x" color="#FF9824"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/categories/add"}>Go to set up a category</Button>
                 </Card>
                 <Card body>
                     <Card.Title>Setup Saving Goal</Card.Title>
-                    <Card.Text>With supporting text below as a natural lead-in to additional content.</Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faCashRegister} size="9x" color="#FF9824"/></Card.Text>
                     <Button className="navBtn">Setup your spending goals</Button>
                 </Card>
             </div>

@@ -4,10 +4,10 @@
 
 .categoryDiv {
     margin-top: 5px;
-    background-color: teal;
     padding-left: 5px;
     text-align:left;
     display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .categoryDiv p {
@@ -25,5 +25,5 @@
     float: right;
     padding-right: 10px;
     font-weight: bold;
-    color: pink;
+    color: #FF9824;
 }
