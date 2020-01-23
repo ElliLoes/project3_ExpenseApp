@@ -14,11 +14,6 @@ function Nav() {
       <a className="navbar-brand" id="expensesLink" href="/expenses">
         Expenses
       </a>
-     {/* <ul className="navbar-nav">
-     <li className="nav-item">
-       <a className="nav-link navbar-brand" id="savedLink" href="/expenses">Expenses</a>
-     </li>
-   </ul> */}
    <Logout/>
  </nav>
  <Jumbotron/>

@@ -28,7 +28,6 @@ class Categories extends Component {
     loadData = () => {
         API.getExpenses()
             .then(res => {
-                // this.setState(res.data);
                 const expenses = res.data;
                 const categoryTotals = {};
                 expenses.forEach(expense => {
@@ -77,8 +76,7 @@ class Categories extends Component {
                             <PieChart
                                 width={400} height={400}
                             >
-                                <Pie dataKey="value" isAnimationActive={false} data={this.state.data}
-                                    // cx={200} cy={200} outerRadius={80} 
+                                <Pie dataKey="value" isAnimationActive={false} data={this.state.data} 
                                     fill="#8884d8"
                                     label
                                 >

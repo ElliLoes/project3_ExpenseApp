@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import Expense from "./pages/Expense";
 import SignUp from "./pages/SignUp";
 import AddCategory from "./pages/AddCategory";
-// import Nav from "./components/Nav";
 import { Container } from "./components/Grid";
 import './App.css';
 import cookie from 'react-cookies'
@@ -17,7 +16,6 @@ function App() {
     <Router>
       <div>
         <Container>
-          {/* <Nav /> */}
           <Switch>
             <LoggedInRoute exact path="/" component={Home} />
             <Route exact path="/login" component={LoginPage} />

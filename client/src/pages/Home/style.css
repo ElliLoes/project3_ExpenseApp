@@ -1,7 +1,6 @@
 .card {
     margin: 20px auto;
     max-width: 320px;
-    /* background-color: #07889b; */
     opacity:.9;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #373737;    
@@ -10,7 +9,7 @@
 
 .navBtn {
     background-color: black!important;
-    border-color: black;
+    border-color: black!important;
     padding: 15px 15px;
 }
 
@@ -18,13 +17,15 @@
     color: white!important;
     margin-top: 30px;
     text-align: center;
+    font-weight: bold;
     margin-left: 0;
 }
 
-/* h1 {
+.card-title {
     font-weight: bold;
-    padding-bottom: 15px;
-} */
+    font-size: 25px;
+}
+
 
 .sumDiv {
     margin: 20px auto;
@@ -41,5 +42,9 @@
     float: none;
     text-align: center;
     padding-top: 10px;
+}
+
+#spGoals {
+    opacity: 0.5;
 }
 

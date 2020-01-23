@@ -1,4 +1,3 @@
-//client/components/Add.js
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import "./style.css";
@@ -52,8 +51,6 @@ class Expense extends React.Component {
         req
             .then(_ => this.props.history.push("/expenses"))
             .catch(err => console.error(err))
-
-        // this.insertNewExpense(this);
     }
 
     handleTextChange = (e) => {

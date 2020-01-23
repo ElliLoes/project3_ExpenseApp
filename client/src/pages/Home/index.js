@@ -43,23 +43,23 @@ class Home extends React.Component {
                 </div>
                 <Card body>
                     <Card.Title>View Expenses</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faCoins} size="9x" color="#FF9824"/></Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faCoins} size="7x" color="#FF9824"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/expenses"}>Go to see all Expenses</Button>
                 </Card>
                 <Card body>
                     <Card.Title>View Categories</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faChartPie} size="9x" color="#FF9824"/></Card.Text>
+                    <Card.Text><FontAwesomeIcon icon={faChartPie} size="7x" color="#FF9824"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/categories"}>View your categories</Button>
                 </Card>
                 <Card body>
-                    <Card.Title>Setup Categories</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faCat} size="9x" color="#FF9824"/></Card.Text>
+                    <Card.Title>Set up Categories</Card.Title>
+                    <Card.Text><FontAwesomeIcon icon={faCat} size="7x" color="#FF9824"/></Card.Text>
                     <Button className="navBtn" onClick={() => window.location.href = "/categories/add"}>Go to set up a category</Button>
                 </Card>
                 <Card body>
                     <Card.Title>Setup Saving Goal</Card.Title>
-                    <Card.Text><FontAwesomeIcon icon={faCashRegister} size="9x" color="#FF9824"/></Card.Text>
-                    <Button className="navBtn">Setup your spending goals</Button>
+                    <Card.Text><FontAwesomeIcon icon={faCashRegister} size="7x" color="#FF9824"/></Card.Text>
+                    <Button id="spGoals" className="navBtn">Set up your spending goals</Button>
                 </Card>
             </div>
         );

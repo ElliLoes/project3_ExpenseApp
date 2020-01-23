@@ -16,9 +16,6 @@ export class CategoryListItem extends React.Component {
       <li>
         <Container>
           <Row>
-            {/* <Col size="xs-4 sm-2">
-              <Image src={this.props.image} />
-            </Col> */}
             <Col size="xs-8 sm-9">
               <h3>{this.props.title}<span></span></h3>
               <h2>${this.props.total || 0}</h2>

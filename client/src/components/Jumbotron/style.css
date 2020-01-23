@@ -1,14 +1,7 @@
 .jumbotron {
-/* position: absolute;
-width: 423px;
-height: 278px;
-left: -12px;
-top: -24px; */
-
 background-size: cover;
 height: 225px;
 width: 100%;
-
 background: #43A19E;
 background-image: ('expenseApp.png');
 margin-bottom: 0;
@@ -22,22 +15,11 @@ img {
 }
 
 #jumboHead {
-
-/* position: absolute; */
-/* width: 116px;
-height: 27px;
-left: 137px;
-top: 148px; */
-
 font-family: 'Share Tech Mono', monospace;
 font-family: 'Signika', sans-serif;
 font-style: normal;
 font-weight: normal;
 font-size: 35px;
 line-height: 27px;
-
-
-color: #19181A;
-
-    
+color: #19181A;    
 }

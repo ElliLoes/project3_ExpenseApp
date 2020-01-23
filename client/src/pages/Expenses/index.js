@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
-// import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
-// import { Link } from "react-router-dom";
 import { Col, Row } from "../../components/Grid";
 import NoExpenses from "../../components/NoExpenses";
 import { ExpenseList, ExpenseListItem } from "../../components/List";
@@ -11,8 +9,6 @@ import AddBtn from "../../components/AddBtn";
 import Nav from "../../components/Nav";
 import "./style.css";
 
-// import AddExpense from "../../components/AddExpense";
-// import AddExpense from "../../pages/AddExpense";
 
 class Expenses extends Component {
   state = {

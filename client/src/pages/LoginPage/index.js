@@ -31,7 +31,7 @@ export default function Login(props) {
 
   return (
     <div className="Login">
-      <Jumbotron/>
+      <Jumbotron />
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="email" bsSize="large" placeholder="e-mail">
           <Form.Label>Email</Form.Label>
@@ -56,19 +56,19 @@ export default function Login(props) {
         </Form.Group>
         <br></br>
         <LoaderBtn
-                    block
-                    type="submit"
-                    bsSize="large"
-                    isLoading={isLoading}
-                    disabled={!validateForm()}
-                >
-                    Login
+          block
+          type="submit"
+          bsSize="large"
+          isLoading={isLoading}
+          disabled={!validateForm()}
+        >
+          Login
                 </LoaderBtn>
         <br></br>
         <div className="logIn">
-        <p>
-          <a  href="/signup">Don't have an account already?<br/> Signup here!</a>
-        </p>
+          <p>
+            <a href="/signup">Don't have an account already?<br /> Signup here!</a>
+          </p>
         </div>
       </Form>
     </div>
