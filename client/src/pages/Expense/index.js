@@ -28,7 +28,7 @@ class Expense extends React.Component {
 
     loadExpense = () => {
         API.getExpense(this.expenseId)
-        .then(res => this.setState(res.data))
+        .then(res => this.setState({...res.data, date: res.data.date.split('T')[0]}))
         .catch(err => console.error(err));
     }
 

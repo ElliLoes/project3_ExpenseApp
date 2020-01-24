@@ -1,5 +1,3 @@
-
-
   .Login form {
     margin: 20px auto;
     max-width: 320px;
@@ -12,7 +10,6 @@
     font-weight: bold!important;
     border-color: #7B43A1!important;
     margin-top: 20px;
-    /* margin-bottom: 40px; */
   }
 
   .logIn p {
@@ -23,8 +20,6 @@
 
   .logIn a {
     color: white;
-    /* margin-left: 50px; */
-
   }
 
 

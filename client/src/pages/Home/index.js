@@ -36,10 +36,8 @@ class Home extends React.Component {
             <div>
                 <Nav />
                 <div className="sumDiv">
-                {/* <Card className="expenseSum"> */}
                     <h2 className="expenseSum">Your Expenses</h2>
                     <h1 className="expenseSum">${this.state.expensesTotal}</h1>
-                {/* </Card> */}
                 </div>
                 <Card body>
                     <Card.Title>View Expenses</Card.Title>
